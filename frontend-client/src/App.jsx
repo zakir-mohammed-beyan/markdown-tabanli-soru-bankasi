@@ -110,7 +110,16 @@ const App = () => {
   };
 
   const handleSubmitQuiz = () => {
-    window.location.href = "/submit-success";
+    const answeredCount = selectedOptions.filter(option => option !== null).length;
+    
+    if (answeredCount < 3) {
+      alert("You must answer at least 3 questions to submit the quiz.");
+    } else {
+      const confirmed = window.confirm("Are you sure you want to submit the quiz?");
+      if (confirmed) {
+        window.location.href = "/submit-success";
+      }
+    }
   };
 
   return (
