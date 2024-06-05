@@ -20,11 +20,16 @@ You can go back to the quiz [here](/).
       <div
         className="centered-content"
         style={{
-          border: "1px solid #6610f2",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: 'center',
+          boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.1)", 
           backgroundColor: "#ffffff",
           padding: "20px 100px",
           textAlign: "center",
-          borderRadius: "5px",
+          borderRadius: "10px", 
+          height: "150px"
+          
         }}
       >
         <MarkdownRenderer
