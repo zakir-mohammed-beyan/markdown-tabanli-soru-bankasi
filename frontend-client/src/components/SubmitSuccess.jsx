@@ -1,11 +1,11 @@
 import React from "react";
-import MarkdownRenderer from "./MarkdownRenderer"; // Adjust the path if necessary
+import MarkdownRenderer from "./MarkdownRenderer"; 
 
 const SubmitSuccess = () => {
   const markdownContent = `
 ## Successfully submitted!
 
-You can go back to the quiz [here](/).
+You can go back to the home [here](/).
 `;
 
   return (

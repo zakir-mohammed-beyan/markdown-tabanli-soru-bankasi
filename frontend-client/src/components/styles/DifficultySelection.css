@@ -1,24 +1,24 @@
-.selection-container {
+.difficulty-selection-container {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
   padding: 40px;
   margin: 50px auto;
   text-align: center;
-  width: 30%; 
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: #0d6efd 1px solid;
 }
 
-.selection-list {
+.difficulty-selection-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.selection-item {
+.difficulty-selection-item {
   font-size: 18px;
   margin: 15px;
   padding: 15px 25px;
@@ -31,12 +31,12 @@
   cursor: pointer;
 }
 
-.selection-item:hover {
+.difficulty-selection-item:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
 
-.selection-title {
+.difficulty-selection-title {
   color: #0d6efd;
   margin-bottom: 20px;
 }
