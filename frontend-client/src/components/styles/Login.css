@@ -1,5 +1,6 @@
+/* Login.css */
 .container {
-  max-width: 500px;
+  width: 30%;
   height: 300px;
   margin: 50px auto;
   padding: 20px;
@@ -12,7 +13,6 @@
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  outline: none;
 }
 
 .input-field {
@@ -41,7 +41,6 @@
   padding: 15px 40px;
   display: block;
   margin: 30px auto;
-  outline: none;
 }
 
 .start-button:hover {
@@ -51,4 +50,9 @@
 .markdown-content {
   font-family: "Poppins", sans-serif;
   text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-top: 1rem;
 }

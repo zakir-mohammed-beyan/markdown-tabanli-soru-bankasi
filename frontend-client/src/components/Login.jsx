@@ -9,15 +9,14 @@ const Login = ({ onLogin }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
+    setError(""); // Clear previous errors
     if (username.trim() !== "") {
       try {
         setIsLoading(true);
-        const response = await axios.post(
-          "http://localhost:5000/validate-username",
-          { username }
-        );
+        const response = await axios.post("http://localhost:5000/validate-username", { username });
         if (response.data.isValid) {
           onLogin(username);
+          setUsername(""); // Clear input on success
         } else {
           setError("Invalid username. Please try again.");
         }
@@ -47,11 +46,13 @@ Please enter your username to start the quiz.
         placeholder="Please enter your username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        aria-label="Username"
       />
       <button
         className="start-button"
         onClick={handleLogin}
         disabled={isLoading}
+        aria-label="Start Quiz"
       >
         {isLoading ? "Loading..." : "Start Quiz"}
       </button>

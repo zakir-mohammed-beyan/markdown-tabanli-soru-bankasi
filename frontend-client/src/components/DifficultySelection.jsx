@@ -26,7 +26,7 @@ const CategorySelection = () => {
   const handlePreviousClick = () => {
     if (isChoosingDifficulty) {
       setIsChoosingDifficulty(false);
-      setSelectedCategory(null); // Clear category when going back to selection
+      setSelectedCategory(null); 
     }
   };
 
