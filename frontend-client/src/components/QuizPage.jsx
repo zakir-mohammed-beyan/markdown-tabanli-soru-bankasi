@@ -65,7 +65,7 @@ const QuizPage = ({ questions, username }) => {
       .trim()
       .split("\n####")
       .filter((q) => q)
-      .map((q) => q.trim().split("\n"));
+      .map((q) => q.trim().split("\n").filter(line => !line.startsWith("answer:")));
   } else {
     return <div>No questions available for this category and difficulty.</div>;
   }
