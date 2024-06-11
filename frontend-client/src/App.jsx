@@ -1,40 +1,26 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import QuizPage from "./components/QuizPage";
 import Login from "./components/Login";
-import SubmitSuccess from "./components/SubmitSuccess";
 import CategorySelection from "./components/CategorySelection";
 import { questions } from "./components/Questions";
+import QuizResult from "./components/QuizResult.jsx";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = (username) => {
     setIsLoggedIn(true);
-  };
-
-  const handleSubmitQuiz = (event, answers) => {
-    event.preventDefault();
-    const answeredCount = Object.keys(answers).length;
-
-    if (answeredCount < 2) {
-      alert("You must answer at least 2 questions to submit the quiz.");
-      return;
-    }
-
-    const confirmed = window.confirm("Are you sure you want to submit the quiz?");
-    if (confirmed) {
-      console.log("Submitted answers:", answers);
-      window.location.href = "/submit-success";
-    }
+    setUsername(username);
   };
 
   return (
     <Router>
       <div className="main-container">
+        
         <Routes>
-          <Route path="/submit-success" element={<SubmitSuccess />} />
           <Route
             path="/"
             element={
@@ -54,9 +40,13 @@ const App = () => {
             element={
               <QuizPage
                 questions={questions}
-                handleSubmitQuiz={handleSubmitQuiz}
+                username={username}
               />
             }
+          />
+          <Route
+            path="/quiz-result"
+            element={<QuizResult />}
           />
         </Routes>
       </div>

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import MarkdownRenderer from "./MarkdownRenderer";
 import './styles/QuizPage.css';
 
-const QuizPage = ({ questions, handleSubmitQuiz }) => {
+const QuizPage = ({ questions, username }) => {
   const { category, difficulty } = useParams();
+  const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
+  const [showNotification, setShowNotification] = useState(false);
 
-  // Handle option change
   const handleOptionChange = (questionIndex, optionIndex) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
@@ -16,20 +17,38 @@ const QuizPage = ({ questions, handleSubmitQuiz }) => {
     }));
   };
 
-  // Format time for display
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  // useEffect to handle timer countdown and auto-submit
+  const handleSubmitQuiz = (event) => {
+    event.preventDefault();
+    const answeredCount = Object.keys(answers).length;
+
+    if (answeredCount < 2) {
+      alert("You must answer at least 2 questions to submit the quiz.");
+      return;
+    }
+
+    const confirmed = window.confirm("Are you sure you want to submit the quiz?");
+    if (confirmed) {
+      console.log("Submitted answers:", answers);
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+        navigate("/quiz-result", { state: { answers, category, difficulty, username } });
+      }, 3000); // Show notification for 3 seconds
+    }
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prevTimeLeft) => {
         if (prevTimeLeft <= 1) {
           clearInterval(timer);
-          handleSubmitQuiz(null, answers); 
+          handleSubmitQuiz(new Event('submit')); // Trigger submit when time runs out
           return 0;
         }
         return prevTimeLeft - 1;
@@ -37,9 +56,8 @@ const QuizPage = ({ questions, handleSubmitQuiz }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [answers, handleSubmitQuiz]);
+  }, [answers]);
 
-  // Extract questions from props based on category and difficulty
   let questionList = [];
   if (questions[category] && questions[category][difficulty]) {
     const rawQuestions = questions[category][difficulty];
@@ -52,11 +70,15 @@ const QuizPage = ({ questions, handleSubmitQuiz }) => {
     return <div>No questions available for this category and difficulty.</div>;
   }
 
-  // Render the quiz page
   return (
     <div className="centered-content">
+      {showNotification && (
+        <div className="notification">
+          Successfully submitted, please check your result!
+        </div>
+      )}
       <div className="timer">Time Left: {formatTime(timeLeft)}</div>
-      <form onSubmit={(e) => handleSubmitQuiz(e, answers)}>
+      <form onSubmit={handleSubmitQuiz}>
         {questionList.map((question, questionIndex) => {
           const imageLines = question.slice(1).filter((line) => line.startsWith('!['));
           const optionLines = question.slice(1).filter((line) => !line.startsWith('!['));

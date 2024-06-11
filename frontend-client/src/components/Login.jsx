@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
         setIsLoading(true);
         const response = await axios.post("http://localhost:5000/validate-username", { username });
         if (response.data.isValid) {
-          onLogin(username);
+          onLogin(username); // Pass the username to the parent component
           setUsername(""); // Clear input on success
         } else {
           setError("Invalid username. Please try again.");
