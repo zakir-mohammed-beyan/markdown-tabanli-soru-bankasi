@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState } from "react";
 import axios from "axios";
 import MarkdownRenderer from "./MarkdownRenderer";
@@ -32,10 +33,9 @@ const Login = ({ onLogin }) => {
   };
 
   const markdownContent = `
-## Login
-
-Please enter your username to start the quiz.
-`;
+  # Login
+  **Please enter your username to start the quiz.**
+  `;
 
   return (
     <div className="container">

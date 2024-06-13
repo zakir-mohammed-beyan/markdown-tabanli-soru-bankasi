@@ -4,7 +4,7 @@ import "./styles/QuizResult.css";
 
 const QuizResult = () => {
   const location = useLocation();
-  const { answers, category, difficulty, username } = location.state || {};
+  const { answers, category, difficulty, username, timeTaken } = location.state || {};
   const questions = require("./Questions").questions;
 
   if (!answers || !category || !difficulty || !username) {
@@ -22,20 +22,23 @@ const QuizResult = () => {
     .filter((q) => q)
     .map((q) => q.trim().split("\n"));
 
-  console.log("rawQuestions:", rawQuestions); // Debugging line
-  console.log("answers:", answers); // Debugging line
-
   let correctCount = 0;
   rawQuestions.forEach((question, index) => {
     const correctAnswerLine = question.find(line => line.startsWith("answer:"));
     const correctAnswerIndex = parseInt(correctAnswerLine.split(" ")[1]) - 1;
-    console.log(`Question ${index + 1}: correct answer index is ${correctAnswerIndex}`); // Debugging line
     if (answers[index] === correctAnswerIndex) {
       correctCount++;
     }
   });
 
   const score = ((correctCount / rawQuestions.length) * 100).toFixed(2);
+
+  const formatTime = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${hours}h ${minutes}m ${secs}s`;
+  };
 
   return (
     <div className="result-container">
@@ -46,7 +49,11 @@ const QuizResult = () => {
       <p>
         Score: {correctCount} out of {rawQuestions.length} ({score}%)
       </p>
-      <p>You can go back to the home <Link to="/">here</Link>.</p>
+      <p>Time Taken: {formatTime(timeTaken)}</p>
+      {correctCount === rawQuestions.length && (
+        <p className="congratulations-message">Congratulations! You got a perfect score!</p>
+      )}
+      <p>Do you want to try again? <Link to="/">here</Link>.</p>
     </div>
   );
 };

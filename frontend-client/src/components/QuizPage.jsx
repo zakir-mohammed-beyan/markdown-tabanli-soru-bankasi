@@ -9,6 +9,7 @@ const QuizPage = ({ questions, username }) => {
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
   const [showNotification, setShowNotification] = useState(false);
+  const [startTime] = useState(Date.now());
 
   const handleOptionChange = (questionIndex, optionIndex) => {
     setAnswers((prevAnswers) => ({
@@ -34,11 +35,13 @@ const QuizPage = ({ questions, username }) => {
 
     const confirmed = window.confirm("Are you sure you want to submit the quiz?");
     if (confirmed) {
+      const endTime = Date.now();
+      const timeTaken = Math.floor((endTime - startTime) / 1000); // time taken in seconds
       console.log("Submitted answers:", answers);
       setShowNotification(true);
       setTimeout(() => {
         setShowNotification(false);
-        navigate("/quiz-result", { state: { answers, category, difficulty, username } });
+        navigate("/quiz-result", { state: { answers, category, difficulty, username, timeTaken } });
       }, 3000); // Show notification for 3 seconds
     }
   };
@@ -70,12 +73,12 @@ const QuizPage = ({ questions, username }) => {
     return <div>No questions available for this category and difficulty.</div>;
   }
 
+
+
   return (
     <div className="centered-content">
       {showNotification && (
-        <div className="notification">
-          Successfully submitted, please check your result!
-        </div>
+        <div className="notification"> <h4 id="successfully">Successfully submitted</h4> You completed the quiz. Here are your results: </div>
       )}
       <div className="timer">Time Left: {formatTime(timeLeft)}</div>
       <form onSubmit={handleSubmitQuiz}>

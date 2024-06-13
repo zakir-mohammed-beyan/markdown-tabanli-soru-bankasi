@@ -14,11 +14,11 @@ body {
 h1 {
   color: #0d6efd;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 h4 {
-  color: #333;
+  color: #ff0000;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -117,7 +117,6 @@ input[type="checkbox"] {
   left: 50%;
   transform: translateX(-50%);
   background-color: #dff0d8;
-  color: #3c763d;
   padding: 15px 30px;
   border: 1px solid #d6e9c6;
   border-radius: 5px;
