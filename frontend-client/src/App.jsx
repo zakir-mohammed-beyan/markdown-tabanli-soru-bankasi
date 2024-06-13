@@ -16,10 +16,14 @@ const App = () => {
     setUsername(username);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername("");
+  };
+
   return (
     <Router>
       <div className="main-container">
-        
         <Routes>
           <Route
             path="/"
@@ -46,7 +50,7 @@ const App = () => {
           />
           <Route
             path="/quiz-result"
-            element={<QuizResult />}
+            element={<QuizResult onLogout={handleLogout} />}
           />
         </Routes>
       </div>

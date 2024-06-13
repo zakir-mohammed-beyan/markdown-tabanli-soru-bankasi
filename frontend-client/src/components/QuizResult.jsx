@@ -1,15 +1,18 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import "./styles/QuizResult.css";
 
-const QuizResult = () => {
+const QuizResult = ({ onLogout }) => {
   const location = useLocation();
+  const navigate = useNavigate(); // Add the useNavigate hook
   const { answers, category, difficulty, username, timeTaken } = location.state || {};
-  const questions = require("./Questions").questions;
 
+  // If any state value is missing, show the message
   if (!answers || !category || !difficulty || !username) {
     return <div>No quiz results to display.</div>;
   }
+
+  const questions = require("./Questions").questions;
 
   // Check if questions exist for the given category and difficulty
   if (!questions[category] || !questions[category][difficulty]) {
@@ -40,6 +43,11 @@ const QuizResult = () => {
     return `${hours}h ${minutes}m ${secs}s`;
   };
 
+  const handleLogout = () => {
+    onLogout(); // Call the logout function passed as a prop
+    navigate("/"); // Navigate to the login page
+  };
+
   return (
     <div className="result-container">
       <h1>Quiz Result</h1>
@@ -54,6 +62,7 @@ const QuizResult = () => {
         <p className="congratulations-message">Congratulations! You got a perfect score!</p>
       )}
       <p>Do you want to try again? <Link to="/">here</Link>.</p>
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
     </div>
   );
 };

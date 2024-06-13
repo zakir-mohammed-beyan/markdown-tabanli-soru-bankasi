@@ -41,7 +41,9 @@ const QuizPage = ({ questions, username }) => {
       setShowNotification(true);
       setTimeout(() => {
         setShowNotification(false);
-        navigate("/quiz-result", { state: { answers, category, difficulty, username, timeTaken } });
+        navigate("/quiz-result", {
+          state: { answers, category, difficulty, username, timeTaken }
+        });
       }, 3000); // Show notification for 3 seconds
     }
   };
@@ -72,8 +74,6 @@ const QuizPage = ({ questions, username }) => {
   } else {
     return <div>No questions available for this category and difficulty.</div>;
   }
-
-
 
   return (
     <div className="centered-content">
