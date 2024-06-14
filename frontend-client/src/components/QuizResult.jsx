@@ -4,7 +4,7 @@ import "./styles/QuizResult.css";
 
 const QuizResult = ({ onLogout }) => {
   const location = useLocation();
-  const navigate = useNavigate(); // Add the useNavigate hook
+  const navigate = useNavigate();
   const { answers, category, difficulty, username, timeTaken } = location.state || {};
 
   // If any state value is missing, show the message
@@ -12,6 +12,7 @@ const QuizResult = ({ onLogout }) => {
     return <div>No quiz results to display.</div>;
   }
 
+  // Load questions
   const questions = require("./Questions").questions;
 
   // Check if questions exist for the given category and difficulty
@@ -19,7 +20,14 @@ const QuizResult = ({ onLogout }) => {
     return <div>Invalid category or difficulty.</div>;
   }
 
-  const rawQuestions = questions[category][difficulty]
+  const rawQuestionsText = questions[category][difficulty];
+  
+  // Check if rawQuestionsText is defined and not empty
+  if (!rawQuestionsText) {
+    return <div>No questions available for the selected category and difficulty.</div>;
+  }
+
+  const rawQuestions = rawQuestionsText
     .trim()
     .split("\n####")
     .filter((q) => q)
@@ -28,6 +36,10 @@ const QuizResult = ({ onLogout }) => {
   let correctCount = 0;
   rawQuestions.forEach((question, index) => {
     const correctAnswerLine = question.find(line => line.startsWith("answer:"));
+    if (!correctAnswerLine) {
+      console.error(`No answer found for question ${index + 1}`);
+      return;
+    }
     const correctAnswerIndex = parseInt(correctAnswerLine.split(" ")[1]) - 1;
     if (answers[index] === correctAnswerIndex) {
       correctCount++;
@@ -44,8 +56,8 @@ const QuizResult = ({ onLogout }) => {
   };
 
   const handleLogout = () => {
-    onLogout(); // Call the logout function passed as a prop
-    navigate("/"); // Navigate to the login page
+    onLogout();
+    navigate("/");
   };
 
   return (
@@ -61,7 +73,7 @@ const QuizResult = ({ onLogout }) => {
       {correctCount === rawQuestions.length && (
         <p className="congratulations-message">Congratulations! You got a perfect score!</p>
       )}
-      <p>Do you want to try again? <Link to="/">here</Link>.</p>
+      <p>Do you want to try again? <Link to="/category-selection">here</Link>.</p> 
       <button className="logout-button" onClick={handleLogout}>Logout</button>
     </div>
   );
