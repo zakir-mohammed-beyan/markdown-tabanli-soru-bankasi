@@ -10,31 +10,31 @@ const Login = ({ onLogin }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
-    setError(""); // Clear previous errors
+    setError(""); 
     if (username.trim() !== "") {
       try {
         setIsLoading(true);
         const response = await axios.post("http://localhost:5000/validate-username", { username });
         if (response.data.isValid) {
-          onLogin(username); // Pass the username to the parent component
-          setUsername(""); // Clear input on success
+          onLogin(username); 
+          setUsername(""); 
         } else {
-          setError("Invalid username. Please try again.");
+          setError("Geçersiz kullanıcı adı. Lütfen tekrar deneyin.");
         }
       } catch (error) {
-        setError("An error occurred. Please try again later.");
-        console.error("Error validating username:", error);
+        setError("Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.");
+        console.error("Kullanıcı adı doğrulanırken hata oluştu:", error);
       } finally {
         setIsLoading(false);
       }
     } else {
-      setError("Username cannot be empty.");
+      setError("Kullanıcı adı boş olamaz.");
     }
   };
 
   const markdownContent = `
-  # Login
-  **Please enter your username to start the quiz.**
+  # Giriş yapın
+  **Sınavı başlatmak için lütfen kullanıcı adınızı girin.**
   `;
 
   return (
@@ -43,7 +43,7 @@ const Login = ({ onLogin }) => {
       <input
         type="text"
         className="input-field"
-        placeholder="Please enter your username"
+        placeholder="Lütfen kullanıcı adınızı girin"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         aria-label="Username"
@@ -54,7 +54,7 @@ const Login = ({ onLogin }) => {
         disabled={isLoading}
         aria-label="Start Quiz"
       >
-        {isLoading ? "Loading..." : "Start Quiz"}
+        {isLoading ? "Yükleniyor..." : "Sınav başlat"}
       </button>
       {error && <p className="error-message">{error}</p>}
     </div>

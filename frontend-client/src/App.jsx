@@ -7,6 +7,7 @@ import CategorySelection from "./components/CategorySelection";
 import { questions } from "./components/Questions";
 import QuizResult from "./components/QuizResult.jsx";
 
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
