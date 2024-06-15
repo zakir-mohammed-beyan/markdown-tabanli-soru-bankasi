@@ -17,5 +17,4 @@ const MarkdownRenderer = ({ markdown }) => {
     </div>
   );
 };
-
 export default MarkdownRenderer;
