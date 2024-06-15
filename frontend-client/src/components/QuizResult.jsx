@@ -67,7 +67,7 @@ const QuizResult = ({ onLogout }) => {
       <p>kategori: {category}</p>
       <p>zorluk seviye: {difficulty}</p>
       <p>
-        Puan: {correctCount} üzerinden {rawQuestions.length} ({score}%)
+      Puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
       </p>
       <p>Geçen süre: {formatTime(timeTaken)}</p>
       {correctCount === rawQuestions.length && (

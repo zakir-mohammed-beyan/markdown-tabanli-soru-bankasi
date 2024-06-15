@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import QuizPage from "./components/QuizPage";
 import Login from "./components/Login";
 import CategorySelection from "./components/CategorySelection";
 import { questions } from "./components/Questions";
 import QuizResult from "./components/QuizResult.jsx";
-
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,6 +37,14 @@ const App = () => {
                   <CategorySelection />
                 </div>
               )
+            }
+          />
+          <Route
+            path="/category-selection"
+            element={
+              <div className="centered-content">
+                <CategorySelection />
+              </div>
             }
           />
           <Route

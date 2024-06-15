@@ -197,15 +197,14 @@ answer: 3
 5. [ ] add()
 answer: 1
 
-#### 5. Aşağıdaki Python kodunun çıktısı nedir?
-
-#### print("Hello, World!".upper())
+#### 5. print("Hello, World!".upper()) kodunun çıktısı nedir?  
 1. [ ] hello, world!
 2. [ ] Hello, World!
 3. [ ] HELLO, WORLD!
 4. [ ] Hello, world!
 5. [ ] hELLO, wORLD!
 answer: 3`,
+
     advanced: `
 #### 1. Hangi programlama dili goroutines kullanarak eşzamanlılık modeliyle bilinir?
 1. [ ] Python
