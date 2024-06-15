@@ -2,7 +2,7 @@ export const questions = {
   markup: {
     beginner: `
  
-#### 1. What does HTML stand for?
+#### 1. HTML neyin kısaltmasıdır?
 1. [ ] Hyper Trainer Marking Language
 2. [ ] Hyper Text Marketing Language
 3. [ ] Hyper Text Markup Language
@@ -10,7 +10,7 @@ export const questions = {
 5. [ ] Hyper Text Marking Level
 answer: 3
 
-#### 2. Which file extension is used for Markdown files?
+#### 2. Markdown dosyaları için hangi dosya uzantısı kullanılır?
 1. [ ] .py
 2. [ ] .rb
 3. [ ] .html
@@ -18,8 +18,8 @@ answer: 3
 5. [ ] .css
 answer: 4
 
-#### 3. This image is related to which markup language?
-![Markdown Logo](/markdown_icon.png)
+#### 3. Bu resim hangi işaretleme dili ile ilgilidir?
+![Markdown Logosu](/markdown_icon.png)
 1. [ ] HTML
 2. [ ] XML
 3. [ ] Markdown
@@ -27,15 +27,15 @@ answer: 4
 5. [ ] YAML
 answer: 3
 
-#### 4. How do you create a checkbox in Markdown?
-1. [ ] [ ] Checkbox
-2. [ ] - [ ] Checkbox
-3. [ ] * [ ] Checkbox
-4. [ ] - [x] Checkbox
-5. [ ] [x] Checkbox
+#### 4. Markdown'da onay kutusu nasıl oluşturulur?
+1. [ ] [ ] Onay Kutusu
+2. [ ] - [ ] Onay Kutusu
+3. [ ] * [ ] Onay Kutusu
+4. [ ] - [x] Onay Kutusu
+5. [ ] [x] Onay Kutusu
 answer: 2
 
-#### 5. Which symbol is used for creating a heading in Markdown?
+#### 5. Markdown'da başlık oluşturmak için hangi sembol kullanılır?
 1. [ ] *
 2. [ ] #
 3. [ ] @
@@ -43,7 +43,7 @@ answer: 2
 5. [ ] &
 answer: 2`,
     intermediate: `
-#### 1. Which HTML tag is used to create a hyperlink?
+#### 1. Hangi HTML etiketi bir bağlantı oluşturmak için kullanılır?
 1. [ ] <link>
 2. [ ] <a>
 3. [ ] <href>
@@ -51,15 +51,15 @@ answer: 2`,
 5. [ ] <anchor>
 answer: 2
 
-#### 2. What is the purpose of the <em> tag in HTML?
-1. [ ] To emphasize text
-2. [ ] To create a table
-3. [ ] To embed an image
-4. [ ] To create a link
-5. [ ] To add a line break
+#### 2. HTML'de <em> etiketinin amacı nedir?
+1. [ ] Metni vurgulamak
+2. [ ] Bir tablo oluşturmak
+3. [ ] Bir resim eklemek
+4. [ ] Bir bağlantı oluşturmak
+5. [ ] Satır sonu eklemek
 answer: 1
 
-#### 3. Which attribute is used to provide an alternate text for an image in HTML?
+#### 3. HTML'de bir resim için alternatif metin sağlamak için hangi öznitelik kullanılır?
 1. [ ] alt
 2. [ ] src
 3. [ ] href
@@ -67,7 +67,7 @@ answer: 1
 5. [ ] link
 answer: 1
 
-#### 4. What does XML stand for?
+#### 4. XML neyin kısaltmasıdır?
 1. [ ] Extra Markup Language
 2. [ ] Example Markup Language
 3. [ ] Extensible Markup Language
@@ -75,7 +75,7 @@ answer: 1
 5. [ ] Exchange Markup Language
 answer: 3
 
-#### 5. Which HTML element is used for the largest heading?
+#### 5. En büyük başlık için hangi HTML öğesi kullanılır?
 1. [ ] <h6>
 2. [ ] <h4>
 3. [ ] <h1>
@@ -83,7 +83,7 @@ answer: 3
 5. [ ] <head>
 answer: 3`,
     advanced: `
-#### 1. Which character is used to indicate a comment in HTML?
+#### 1. HTML'de bir yorumu belirtmek için hangi karakter kullanılır?
 1. [ ] //
 2. [ ] ##
 3. [ ] <!-- -->
@@ -91,15 +91,15 @@ answer: 3`,
 5. [ ] { }
 answer: 3
 
-#### 2. In Markdown, how do you create an unordered list?
-1. [ ] 1. Item
-2. [ ] - Item
-3. [ ] * Item
-4. [ ] + Item
-5. [ ] ~ Item
+#### 2. Markdown'da sırasız liste nasıl oluşturulur?
+1. [ ] 1. öğe
+2. [ ] - öğe
+3. [ ] * öğe
+4. [ ] + öğe
+5. [ ] ~ öğe
 answer: 2
 
-#### 3. What is the correct HTML tag for inserting a line break?
+#### 3. Satır sonu eklemek için doğru HTML etiketi hangisidir?
 1. [ ] <break>
 2. [ ] <lb>
 3. [ ] <br>
@@ -107,7 +107,7 @@ answer: 2
 5. [ ] <linebreak>
 answer: 3
 
-#### 4. Which HTML attribute is used to specify a unique identifier for an element?
+#### 4. Bir HTML öğesi için benzersiz bir tanımlayıcı belirtmek için hangi öznitelik kullanılır?
 1. [ ] id
 2. [ ] class
 3. [ ] name
@@ -115,17 +115,17 @@ answer: 3
 5. [ ] unique
 answer: 1
 
-#### 5. In Markdown, how do you create a link?
-1. [ ] [Link](URL)
-2. [ ] (Link)[URL]
-3. [ ] {Link}(URL)
-4. [ ] [URL](Link)
-5. [ ] <Link>(URL)
+#### 5. Markdown'da bir bağlantı nasıl oluşturulur?
+1. [ ] [Bağlantı](URL)
+2. [ ] (Bağlantı)[URL]
+3. [ ] {Bağlantı}(URL)
+4. [ ] [URL](Bağlantı)
+5. [ ] <Bağlantı>(URL)
 answer: 1`
   },
   programming: {
     beginner: `
-#### 1. Which programming language is known for its use in web development and is often embedded in HTML?
+#### 1. Hangi programlama dili web geliştirme için bilinir ve genellikle HTML'ye gömülüdür?
 1. [ ] Python
 2. [ ] Java
 3. [ ] JavaScript
@@ -133,7 +133,7 @@ answer: 1`
 5. [ ] PHP
 answer: 3
 
-#### 2. Which programming language is known for its simplicity and readability, often recommended for beginners?
+#### 2. Basitliği ve okunabilirliği ile tanınan ve genellikle yeni başlayanlar için önerilen programlama dili hangisidir?
 1. [ ] C
 2. [ ] Java
 3. [ ] PHP
@@ -141,7 +141,7 @@ answer: 3
 5. [ ] JavaScript
 answer: 4
 
-#### 3. Which language is commonly used for system programming and operating systems?
+#### 3. Sistem programlama ve işletim sistemleri için yaygın olarak kullanılan dil hangisidir?
 1. [ ] Python
 2. [ ] Java
 3. [ ] C
@@ -149,7 +149,7 @@ answer: 4
 5. [ ] PHP
 answer: 3
 
-#### 4. Which programming language is widely used for building enterprise-scale applications?
+#### 4. Kurumsal ölçekli uygulamalar geliştirmek için yaygın olarak kullanılan programlama dili hangisidir?
 1. [ ] Python
 2. [ ] Java
 3. [ ] C
@@ -157,7 +157,7 @@ answer: 3
 5. [ ] PHP
 answer: 2
 
-#### 5. Which language is known for its extensive use in server-side scripting and web development?
+#### 5. Sunucu tarafı betik yazma ve web geliştirme için yaygın olarak kullanılan dil hangisidir?
 1. [ ] Python
 2. [ ] Java
 3. [ ] C
@@ -165,7 +165,7 @@ answer: 2
 5. [ ] PHP
 answer: 5`,
     intermediate: `
-#### 1. What does "DOM" stand for in JavaScript?
+#### 1. JavaScript'te "DOM" ne anlama gelir?
 1. [ ] Document Object Model
 2. [ ] Data Object Model
 3. [ ] Digital Object Management
@@ -173,7 +173,7 @@ answer: 5`,
 5. [ ] Data Operational Mode
 answer: 1
 
-#### 2. Which keyword is used to declare a constant in JavaScript?
+#### 2. JavaScript'te bir sabit tanımlamak için hangi anahtar kelime kullanılır?
 1. [ ] var
 2. [ ] let
 3. [ ] const
@@ -181,7 +181,7 @@ answer: 1
 5. [ ] immutable
 answer: 3
 
-#### 3. Which company developed the Java programming language?
+#### 3. Java programlama dilini hangi şirket geliştirdi?
 1. [ ] Microsoft
 2. [ ] Apple
 3. [ ] Sun Microsystems
@@ -189,7 +189,7 @@ answer: 3
 5. [ ] Oracle
 answer: 3
 
-#### 4. Which PHP function is used to include the content of one PHP file into another PHP file?
+#### 4. Bir PHP dosyasının içeriğini başka bir PHP dosyasına dahil etmek için hangi PHP fonksiyonu kullanılır?
 1. [ ] include()
 2. [ ] import()
 3. [ ] require()
@@ -197,7 +197,7 @@ answer: 3
 5. [ ] add()
 answer: 1
 
-#### 5. What is the output of the following Python code?
+#### 5. Aşağıdaki Python kodunun çıktısı nedir?
 
 #### print("Hello, World!".upper())
 1. [ ] hello, world!
@@ -207,7 +207,7 @@ answer: 1
 5. [ ] hELLO, wORLD!
 answer: 3`,
     advanced: `
-#### 1. Which programming language is known for its concurrency model using goroutines?
+#### 1. Hangi programlama dili goroutines kullanarak eşzamanlılık modeliyle bilinir?
 1. [ ] Python
 2. [ ] Java
 3. [ ] Go
@@ -215,15 +215,15 @@ answer: 3`,
 5. [ ] Swift
 answer: 3
 
-#### 2. What is the main difference between Java and JavaScript?
-1. [ ] Java is a scripting language, while JavaScript is a programming language
-2. [ ] JavaScript is compiled, while Java is interpreted
-3. [ ] Java is a statically-typed language, while JavaScript is dynamically-typed
-4. [ ] JavaScript is used for backend development, while Java is used for frontend development
-5. [ ] Java is primarily used for web development, while JavaScript is used for mobile app development
+#### 2. Java ve JavaScript arasındaki temel fark nedir?
+1. [ ] Java bir betik dili iken, JavaScript bir programlama dilidir
+2. [ ] JavaScript derlenir, Java ise yorumlanır
+3. [ ] Java statik olarak yazılan bir dil iken, JavaScript dinamik olarak yazılan bir dildir
+4. [ ] JavaScript backend geliştirme için kullanılır, Java ise frontend geliştirme için kullanılır
+5. [ ] Java öncelikle web geliştirme için kullanılırken, JavaScript mobil uygulama geliştirme için kullanılır
 answer: 3
 
-#### 3. In Python, which keyword is used to create a function?
+#### 3. Python'da bir fonksiyon oluşturmak için hangi anahtar kelime kullanılır?
 1. [ ] func
 2. [ ] define
 3. [ ] def
@@ -231,15 +231,15 @@ answer: 3
 5. [ ] lambda
 answer: 3
 
-#### 4. What is the purpose of the "virtualenv" tool in Python?
-1. [ ] To create isolated Python environments
-2. [ ] To compile Python code
-3. [ ] To package Python libraries
-4. [ ] To debug Python code
-5. [ ] To deploy Python applications
+#### 4. Python'da "virtualenv" aracının amacı nedir?
+1. [ ] İzole edilmiş Python ortamları oluşturmak
+2. [ ] Python kodunu derlemek
+3. [ ] Python kütüphanelerini paketlemek
+4. [ ] Python kodunu hata ayıklamak
+5. [ ] Python uygulamalarını dağıtmak
 answer: 1
 
-#### 5. Which of the following is a NoSQL database?
+#### 5. Aşağıdakilerden hangisi bir NoSQL veritabanıdır?
 1. [ ] MySQL
 2. [ ] PostgreSQL
 3. [ ] Oracle
@@ -249,125 +249,125 @@ answer: 4`
   },
   general: {
     beginner: `
-#### 1. Which historical landmark in Turkey was once a church, then a mosque, and is now a museum?
-1. [ ] Blue Mosque
-2. [ ] Topkapi Palace
-3. [ ] Hagia Sophia
-4. [ ] Galata Tower
-5. [ ] Bosphorus Bridge
+#### 1. Türkiye'de bir zamanlar kilise, sonra cami ve şimdi müze olan tarihi yapı hangisidir?
+1. [ ] Sultanahmet Camii
+2. [ ] Topkapı Sarayı
+3. [ ] Ayasofya
+4. [ ] Galata Kulesi
+5. [ ] Boğaziçi Köprüsü
 answer: 3
 
-#### 2. Which sea borders Turkey to the north?
-1. [ ] Mediterranean Sea
-2. [ ] Aegean Sea
-3. [ ] Black Sea
-4. [ ] Sea of Marmara
-5. [ ] Red Sea
+#### 2. Türkiye'nin kuzeyinde hangi deniz yer alır?
+1. [ ] Akdeniz
+2. [ ] Ege Denizi
+3. [ ] Karadeniz
+4. [ ] Marmara Denizi
+5. [ ] Kızıldeniz
 answer: 3
 
-#### 3. Which city is located at the intersection of the Black Sea and the Sea of Marmara?
-![Map of Turkey](/turkey_regions.webp)
-1. [ ] Istanbul
+#### 3. Karadeniz ve Marmara Denizi'nin kesiştiği şehir hangisidir?
+![Türkiye Haritası](/turkey_regions.webp)
+1. [ ] İstanbul
 2. [ ] Ankara
-3. [ ] Izmir
+3. [ ] İzmir
 4. [ ] Antalya
 5. [ ] Bursa
 answer: 1
 
-#### 4. Which mountain is the highest peak in Turkey?
-1. [ ] Mount Ararat
-2. [ ] Mount Erciyes
-3. [ ] Mount Suphan
-4. [ ] Mount Nemrut
-5. [ ] Mount Kackar
+#### 4. Türkiye'nin en yüksek dağı hangisidir?
+1. [ ] Ağrı Dağı
+2. [ ] Erciyes Dağı
+3. [ ] Süphan Dağı
+4. [ ] Nemrut Dağı
+5. [ ] Kaçkar Dağı
 answer: 1
 
-#### 5. Which famous ancient city located in Turkey is known for its association with the Trojan War?
-1. [ ] Ephesus
-2. [ ] Troy
-3. [ ] Pergamon
+#### 5. Türkiye'de Truva Savaşı ile ilişkilendirilen ünlü antik şehir hangisidir?
+1. [ ] Efes
+2. [ ] Truva
+3. [ ] Bergama
 4. [ ] Aspendos
 5. [ ] Patara
 answer: 2`,
     intermediate: `
-#### 1. What is the capital city of Turkey?
-1. [ ] Istanbul
+#### 1. Türkiye'nin başkenti neresidir?
+1. [ ] İstanbul
 2. [ ] Ankara
-3. [ ] Izmir
+3. [ ] İzmir
 4. [ ] Antalya
 5. [ ] Bursa
 answer: 2
 
-#### 2. What is the largest city in Turkey by population?
+#### 2. Türkiye'nin nüfus bakımından en büyük şehri hangisidir?
 1. [ ] Ankara
-2. [ ] Izmir
-3. [ ] Istanbul
+2. [ ] İzmir
+3. [ ] İstanbul
 4. [ ] Bursa
 5. [ ] Antalya
 answer: 3
 
-#### 3. Which Turkish leader founded the Republic of Turkey in 1923?
+#### 3. 1923'te Türkiye Cumhuriyeti'ni kuran Türk lider kimdir?
 1. [ ] Mustafa Kemal Atatürk
-2. [ ] Suleiman the Magnificent
-3. [ ] Mehmed the Conqueror
+2. [ ] Kanuni Sultan Süleyman
+3. [ ] Fatih Sultan Mehmet
 4. [ ] Recep Tayyip Erdoğan
-5. [ ] Ismet Inönü
+5. [ ] İsmet İnönü
 answer: 1
 
-#### 4. What is the official language of Turkey?
-1. [ ] Arabic
-2. [ ] Greek
-3. [ ] Turkish
-4. [ ] Kurdish
-5. [ ] Armenian
+#### 4. Türkiye'nin resmi dili nedir?
+1. [ ] Arapça
+2. [ ] Yunanca
+3. [ ] Türkçe
+4. [ ] Kürtçe
+5. [ ] Ermenice
 answer: 3
 
-#### 5. Which body of water separates the European and Asian parts of Turkey?
-1. [ ] Bosphorus Strait
-2. [ ] Dardanelles Strait
-3. [ ] Aegean Sea
-4. [ ] Black Sea
-5. [ ] Sea of Marmara
+#### 5. Türkiye'nin Avrupa ve Asya kısmını ayıran su yolu hangisidir?
+1. [ ] Boğaziçi
+2. [ ] Çanakkale Boğazı
+3. [ ] Ege Denizi
+4. [ ] Karadeniz
+5. [ ] Marmara Denizi
 answer: 1`,
     advanced: `
-#### 1. What is the currency of Turkey?
+#### 1. Türkiye'nin para birimi nedir?
 1. [ ] Euro
 2. [ ] Pound Sterling
-3. [ ] Turkish Lira
-4. [ ] Dollar
+3. [ ] Türk Lirası
+4. [ ] Dolar
 5. [ ] Riyal
 answer: 3
 
-#### 2. Which famous Turkish dish is made from minced meat, usually lamb or beef, and is often served with rice?
+#### 2. Kıyma, genellikle kuzu veya sığır eti, ile yapılan ve genellikle pilavla servis edilen ünlü Türk yemeği hangisidir?
 1. [ ] Kebab
 2. [ ] Baklava
 3. [ ] Börek
-4. [ ] Manti
-5. [ ] Kofta
+4. [ ] Mantı
+5. [ ] Köfte
 answer: 5
 
-#### 3. Which architectural feature is a characteristic of traditional Ottoman houses?
-1. [ ] Minaret
-2. [ ] Dome
-3. [ ] Arch
-4. [ ] Balcony
-5. [ ] Courtyard
+#### 3. Geleneksel Osmanlı evlerinin karakteristik özelliği olan mimari özellik hangisidir?
+1. [ ] Minare
+2. [ ] Kubbe
+3. [ ] Kemer
+4. [ ] Balkon
+5. [ ] Avlu
 answer: 5
 
-#### 4. Which ancient civilization is associated with the city of Troy in Turkey?
-1. [ ] Greek
-2. [ ] Roman
-3. [ ] Persian
-4. [ ] Hittite
-5. [ ] Byzantine
+#### 4. Türkiye'deki Truva şehri ile ilişkilendirilen antik uygarlık hangisidir?
+1. [ ] Yunan
+2. [ ] Roma
+3. [ ] Pers
+4. [ ] Hitit
+5. [ ] Bizans
 answer: 1
 
-#### 5. What is the name of the strait that connects the Black Sea to the Sea of Marmara?
-1. [ ] Bosphorus
-2. [ ] Dardanelles
-3. [ ] Bosporus
-4. [ ] Turkish Strait
-5. [ ] Istanbul Strait
+#### 5. Karadeniz'i Marmara Denizi'ne bağlayan boğazın adı nedir?
+1. [ ] Boğaziçi
+2. [ ] Çanakkale Boğazı
+3. [ ] İstanbul Boğazı
+4. [ ] Türk Boğazı
+5. [ ] İstanbul Boğazı
 answer: 1`
   }
 }
