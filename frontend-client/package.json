@@ -23,9 +23,8 @@
     "remark-images": "^4.0.0",
     "sanitize-html": "^2.13.0",
     "styled-components": "^6.1.11",
-    "web-vitals": "^2.1.4",
-    "cSpell.language": "en, tr"
-
+    "web-vitals": "^2.1.4"
+ 
   },
   "scripts": {
     "start": "react-scripts start",
