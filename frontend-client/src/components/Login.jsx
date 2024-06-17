@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from "react";
 import axios from "axios";
 import MarkdownRenderer from "./MarkdownRenderer";
@@ -10,14 +9,17 @@ const Login = ({ onLogin }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
-    setError(""); 
+    setError("");
     if (username.trim() !== "") {
       try {
         setIsLoading(true);
-        const response = await axios.post("http://localhost:5000/validate-username", { username });
+        const response = await axios.post(
+          "http://localhost:5000/validate-username",
+          { username }
+        );
         if (response.data.isValid) {
-          onLogin(username); 
-          setUsername(""); 
+          onLogin(username);
+          setUsername("");
         } else {
           setError("Geçersiz kullanıcı adı. Lütfen tekrar deneyin.");
         }
