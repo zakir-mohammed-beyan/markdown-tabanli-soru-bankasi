@@ -7,21 +7,17 @@ const QuizResult = ({ onLogout }) => {
   const navigate = useNavigate();
   const { answers, category, difficulty, username, timeTaken } = location.state || {};
 
-
   if (!answers || !category || !difficulty || !username) {
     return <div>Görüntülenecek sınav sonucu yok.</div>;
   }
 
-
   const questions = require("./Questions").questions;
 
- 
   if (!questions[category] || !questions[category][difficulty]) {
     return <div>Geçersiz kategori veya zorluk.</div>;
   }
 
   const rawQuestionsText = questions[category][difficulty];
-  
 
   if (!rawQuestionsText) {
     return <div>Seçilen kategori ve zorluk derecesine ilişkin soru mevcut değil.</div>;
@@ -64,26 +60,16 @@ const QuizResult = ({ onLogout }) => {
     <div className="result-container">
       <h1>Sınav Sonucu</h1>
       <h2>Kullanıcı adı: {username}</h2>
-<<<<<<< HEAD
       <p>Kategori: {category}</p>
       <p>Zorluk seviye: {difficulty}</p>
       <p>Sayfa'da geçen süre: {formatTime(timeTaken)}</p>
       <p>
       Alınan puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
       </p>
-     
-=======
-      <p>kategori: {category}</p>
-      <p>zorluk seviye: {difficulty}</p>
-      <p>
-      Puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
-      </p>
-      <p>Geçen süre: {formatTime(timeTaken)}</p>
->>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
       {correctCount === rawQuestions.length && (
         <p className="congratulations-message">Tebrikler! Mükemmel bir puan aldınız!</p>
       )}
-      <p>Tekrar denemek ister misiniz ? <Link to="/category-selection">burda</Link>.</p> 
+      <p>Tekrar denemek ister misiniz? <Link to="/category-selection">burda</Link>.</p> 
       <button className="logout-button" onClick={handleLogout}>Çıkış yapın</button>
     </div>
   );

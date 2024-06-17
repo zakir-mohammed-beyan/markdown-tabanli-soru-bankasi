@@ -34,11 +34,7 @@ const Login = ({ onLogin }) => {
 
   const markdownContent = `
   # Giriş yapın
-<<<<<<< HEAD
-  **Sınavı başlatmak için lütfen doğru kullanıcı adınızı girin.**
-=======
   **Sınavı başlatmak için lütfen kullanıcı adınızı girin.**
->>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
   `;
 
   return (
