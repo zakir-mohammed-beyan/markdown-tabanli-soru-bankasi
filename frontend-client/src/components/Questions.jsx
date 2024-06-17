@@ -42,7 +42,11 @@ answer: 2
 4. [ ] $
 5. [ ] &
 answer: 2`,
+<<<<<<< HEAD
     orta: `
+=======
+    intermediate: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Hangi HTML etiketi bir bağlantı oluşturmak için kullanılır?
 1. [ ] <link>
 2. [ ] <a>
@@ -82,7 +86,11 @@ answer: 3
 4. [ ] <header>
 5. [ ] <head>
 answer: 3`,
+<<<<<<< HEAD
     yuksek: `
+=======
+    advanced: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. HTML'de bir yorumu belirtmek için hangi karakter kullanılır?
 1. [ ] //
 2. [ ] ##
@@ -123,8 +131,13 @@ answer: 1
 5. [ ] <Bağlantı>(URL)
 answer: 1`
   },
+<<<<<<< HEAD
   programlama: {
     baslangic: `
+=======
+  programming: {
+    beginner: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Hangi programlama dili web geliştirme için bilinir ve genellikle HTML'ye gömülüdür?
 1. [ ] Python
 2. [ ] Java
@@ -164,7 +177,11 @@ answer: 2
 4. [ ] JavaScript
 5. [ ] PHP
 answer: 5`,
+<<<<<<< HEAD
     orta: `
+=======
+    intermediate: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. JavaScript'te "DOM" ne anlama gelir?
 1. [ ] Document Object Model
 2. [ ] Data Object Model
@@ -205,7 +222,11 @@ answer: 1
 5. [ ] hELLO, wORLD!
 answer: 3`,
 
+<<<<<<< HEAD
     yuksek: `
+=======
+    advanced: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Hangi programlama dili goroutines kullanarak eşzamanlılık modeliyle bilinir?
 1. [ ] Python
 2. [ ] Java
@@ -246,8 +267,13 @@ answer: 1
 5. [ ] SQLite
 answer: 4`
   },
+<<<<<<< HEAD
   genel: {
     baslangic: `
+=======
+  general: {
+    beginner: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Türkiye'de bir zamanlar kilise, sonra cami ve şimdi müze olan tarihi yapı hangisidir?
 1. [ ] Sultanahmet Camii
 2. [ ] Topkapı Sarayı
@@ -288,7 +314,11 @@ answer: 1
 4. [ ] Aspendos
 5. [ ] Patara
 answer: 2`,
+<<<<<<< HEAD
     orta: `
+=======
+    intermediate: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Türkiye'nin başkenti neresidir?
 1. [ ] İstanbul
 2. [ ] Ankara
@@ -328,7 +358,11 @@ answer: 3
 4. [ ] Karadeniz
 5. [ ] Marmara Denizi
 answer: 1`,
+<<<<<<< HEAD
     yuksek: `
+=======
+    advanced: `
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
 #### 1. Türkiye'nin para birimi nedir?
 1. [ ] Euro
 2. [ ] Pound Sterling

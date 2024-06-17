@@ -64,6 +64,7 @@ const QuizResult = ({ onLogout }) => {
     <div className="result-container">
       <h1>Sınav Sonucu</h1>
       <h2>Kullanıcı adı: {username}</h2>
+<<<<<<< HEAD
       <p>Kategori: {category}</p>
       <p>Zorluk seviye: {difficulty}</p>
       <p>Sayfa'da geçen süre: {formatTime(timeTaken)}</p>
@@ -71,6 +72,14 @@ const QuizResult = ({ onLogout }) => {
       Alınan puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
       </p>
      
+=======
+      <p>kategori: {category}</p>
+      <p>zorluk seviye: {difficulty}</p>
+      <p>
+      Puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
+      </p>
+      <p>Geçen süre: {formatTime(timeTaken)}</p>
+>>>>>>> 2d1b1b27b8b8e6554fc1d0ab76030a7433b8c829
       {correctCount === rawQuestions.length && (
         <p className="congratulations-message">Tebrikler! Mükemmel bir puan aldınız!</p>
       )}
