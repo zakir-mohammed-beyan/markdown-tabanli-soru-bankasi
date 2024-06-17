@@ -1,7 +1,7 @@
 /* Login.css */
 .container {
-  width: 30%;
-  height: 300px;
+  width: 35%;
+  height: 350px;
   margin: 50px auto;
   padding: 20px;
   background: #f9f9f9;
@@ -55,4 +55,8 @@
 .error-message {
   color: red;
   margin-top: 1rem;
+}
+
+h1{
+  color: #6610f2;
 }

@@ -7,7 +7,7 @@ const QuizPage = ({ questions, username }) => {
   const { category, difficulty } = useParams();
   const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(300); 
   const [showNotification, setShowNotification] = useState(false);
   const [startTime] = useState(Date.now());
 
@@ -29,14 +29,14 @@ const QuizPage = ({ questions, username }) => {
     const answeredCount = Object.keys(answers).length;
 
     if (answeredCount < 2) {
-      alert("You must answer at least 2 questions to submit the quiz.");
+      alert("sınavı gönderebilmek için en az 2 soruyu yanıtlamanız gerekmektedir.");
       return;
     }
 
-    const confirmed = window.confirm("Are you sure you want to submit the quiz?");
+    const confirmed = window.confirm("Sınav göndermek istediğinizden emin misiniz?");
     if (confirmed) {
       const endTime = Date.now();
-      const timeTaken = Math.floor((endTime - startTime) / 1000); // time taken in seconds
+      const timeTaken = Math.floor((endTime - startTime) / 1000); 
       console.log("Submitted answers:", answers);
       setShowNotification(true);
       setTimeout(() => {
@@ -44,7 +44,7 @@ const QuizPage = ({ questions, username }) => {
         navigate("/quiz-result", {
           state: { answers, category, difficulty, username, timeTaken }
         });
-      }, 3000); // Show notification for 3 seconds
+      }, 3000); 
     }
   };
 
@@ -53,7 +53,7 @@ const QuizPage = ({ questions, username }) => {
       setTimeLeft((prevTimeLeft) => {
         if (prevTimeLeft <= 1) {
           clearInterval(timer);
-          handleSubmitQuiz(new Event('submit')); // Trigger submit when time runs out
+          handleSubmitQuiz(new Event('submit')); 
           return 0;
         }
         return prevTimeLeft - 1;
@@ -72,15 +72,15 @@ const QuizPage = ({ questions, username }) => {
       .filter((q) => q)
       .map((q) => q.trim().split("\n").filter(line => !line.startsWith("answer:")));
   } else {
-    return <div>No questions available for this category and difficulty.</div>;
+    return <div>Bu kategori ve zorluk derecesine uygun soru yok.</div>;
   }
 
   return (
     <div className="centered-content">
       {showNotification && (
-        <div className="notification"> <h4 id="successfully">Successfully submitted</h4> You completed the quiz. Here are your results: </div>
+        <div className="notification"> <h4 id="successfully">Başarıyla gönderildi</h4> Sınav tamamladınız. İşte sonuçlarınız:</div>
       )}
-      <div className="timer">Time Left: {formatTime(timeLeft)}</div>
+      <div className="timer">Kalan süre: {formatTime(timeLeft)}</div>
       <form onSubmit={handleSubmitQuiz}>
         {questionList.map((question, questionIndex) => {
           const imageLines = question.slice(1).filter((line) => line.startsWith('!['));
@@ -113,7 +113,7 @@ const QuizPage = ({ questions, username }) => {
           );
         })}
         <button type="submit" className="submit-button">
-          Submit Quiz
+        Sınav gönderin
         </button>
       </form>
     </div>

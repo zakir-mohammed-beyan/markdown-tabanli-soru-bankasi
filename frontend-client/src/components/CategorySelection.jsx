@@ -34,21 +34,21 @@ const CategorySelection = () => {
     <div className="selection-container">
       {isChoosingDifficulty ? (
         <>
-          <h1 className="selection-title">Select Difficulty</h1>
+          <h1 className="selection-title">Zorluk seçin</h1>
           <div className="selection-list">
-            <button onClick={() => handleDifficultyClick('beginner')} className="selection-item">Beginner</button>
-            <button onClick={() => handleDifficultyClick('intermediate')} className="selection-item">Intermediate</button>
-            <button onClick={() => handleDifficultyClick('advanced')} className="selection-item">Advanced</button>
+            <button onClick={() => handleDifficultyClick('baslangic')} className="selection-item">Başlangıç</button>
+            <button onClick={() => handleDifficultyClick('orta')} className="selection-item">Orta seviye</button>
+            <button onClick={() => handleDifficultyClick('yuksek')} className="selection-item">Yüksek seviye</button>
           </div>
-          <button onClick={handlePreviousClick} className="btn-previous">Previous</button>
+          <button onClick={handlePreviousClick} className="btn-previous">Öncesi</button>
         </>
       ) : (
         <>
-          <h1 className="selection-title">Select a Category</h1>
+          <h1 className="selection-title">Bir kategori seçin</h1>
           <div className="selection-list">
-            <button onClick={() => handleCategoryClick('markup')} className="selection-item">Markup Languages</button>
-            <button onClick={() => handleCategoryClick('programming')} className="selection-item">Programming Languages</button>
-            <button onClick={() => handleCategoryClick('general')} className="selection-item">General Info about Turkey</button>
+            <button onClick={() => handleCategoryClick('isaretleme')} className="selection-item">İşaretleme Dilleri</button>
+            <button onClick={() => handleCategoryClick('programlama')} className="selection-item">Programlama dilleri</button>
+            <button onClick={() => handleCategoryClick('genel')} className="selection-item">Türkiye Hakkında Genel Bilgi</button>
           </div>
         </>
       )}

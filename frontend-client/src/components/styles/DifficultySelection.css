@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   border: #0d6efd 1px solid;
+  font-size: 18px;
 }
 
 .difficulty-selection-list {

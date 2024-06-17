@@ -7,24 +7,24 @@ const QuizResult = ({ onLogout }) => {
   const navigate = useNavigate();
   const { answers, category, difficulty, username, timeTaken } = location.state || {};
 
-  // If any state value is missing, show the message
+
   if (!answers || !category || !difficulty || !username) {
-    return <div>No quiz results to display.</div>;
+    return <div>Görüntülenecek sınav sonucu yok.</div>;
   }
 
-  // Load questions
+
   const questions = require("./Questions").questions;
 
-  // Check if questions exist for the given category and difficulty
+ 
   if (!questions[category] || !questions[category][difficulty]) {
-    return <div>Invalid category or difficulty.</div>;
+    return <div>Geçersiz kategori veya zorluk.</div>;
   }
 
   const rawQuestionsText = questions[category][difficulty];
   
-  // Check if rawQuestionsText is defined and not empty
+
   if (!rawQuestionsText) {
-    return <div>No questions available for the selected category and difficulty.</div>;
+    return <div>Seçilen kategori ve zorluk derecesine ilişkin soru mevcut değil.</div>;
   }
 
   const rawQuestions = rawQuestionsText
@@ -37,7 +37,7 @@ const QuizResult = ({ onLogout }) => {
   rawQuestions.forEach((question, index) => {
     const correctAnswerLine = question.find(line => line.startsWith("answer:"));
     if (!correctAnswerLine) {
-      console.error(`No answer found for question ${index + 1}`);
+      console.error(`Soruya cevap bulunamadı ${index + 1}`);
       return;
     }
     const correctAnswerIndex = parseInt(correctAnswerLine.split(" ")[1]) - 1;
@@ -62,19 +62,20 @@ const QuizResult = ({ onLogout }) => {
 
   return (
     <div className="result-container">
-      <h1>Quiz Result</h1>
-      <h2>Username: {username}</h2>
-      <p>Category: {category}</p>
-      <p>Difficulty: {difficulty}</p>
+      <h1>Sınav Sonucu</h1>
+      <h2>Kullanıcı adı: {username}</h2>
+      <p>Kategori: {category}</p>
+      <p>Zorluk seviye: {difficulty}</p>
+      <p>Sayfa'da geçen süre: {formatTime(timeTaken)}</p>
       <p>
-        Score: {correctCount} out of {rawQuestions.length} ({score}%)
+      Alınan puan: {rawQuestions.length} üzerinden {correctCount} ({score}%)
       </p>
-      <p>Time Taken: {formatTime(timeTaken)}</p>
+     
       {correctCount === rawQuestions.length && (
-        <p className="congratulations-message">Congratulations! You got a perfect score!</p>
+        <p className="congratulations-message">Tebrikler! Mükemmel bir puan aldınız!</p>
       )}
-      <p>Do you want to try again? <Link to="/category-selection">here</Link>.</p> 
-      <button className="logout-button" onClick={handleLogout}>Logout</button>
+      <p>Tekrar denemek ister misiniz ? <Link to="/category-selection">burda</Link>.</p> 
+      <button className="logout-button" onClick={handleLogout}>Çıkış yapın</button>
     </div>
   );
 };
