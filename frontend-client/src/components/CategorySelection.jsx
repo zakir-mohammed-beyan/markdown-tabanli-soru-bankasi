@@ -34,7 +34,7 @@ const CategorySelection = () => {
     <div className="selection-container">
       {isChoosingDifficulty ? (
         <>
-          <h1 className="selection-title">Zorluk seçin</h1>
+          <h1 className="selection-title">Zorluk seviyesini seçin</h1>
           <div className="selection-list">
             <button onClick={() => handleDifficultyClick('baslangic')} className="selection-item">Başlangıç</button>
             <button onClick={() => handleDifficultyClick('orta')} className="selection-item">Orta seviye</button>

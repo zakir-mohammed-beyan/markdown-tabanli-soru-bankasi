@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MarkdownRenderer from "./MarkdownRenderer";
-import './styles/QuizPage.css';
+import CustomAlert from "../components/CustomAlert";
+import CustomConfirm from "../components/CustomConfirm";
+import "./styles/QuizPage.css";
 
 const QuizPage = ({ questions, username }) => {
   const { category, difficulty } = useParams();
   const navigate = useNavigate();
   const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(300); 
-  const [showNotification, setShowNotification] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(300);
+  const [showAlert, setShowAlert] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [startTime] = useState(Date.now());
 
   const handleOptionChange = (questionIndex, optionIndex) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
-      [questionIndex]: optionIndex
+      [questionIndex]: optionIndex,
     }));
   };
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
   const handleSubmitQuiz = (event) => {
@@ -29,23 +32,25 @@ const QuizPage = ({ questions, username }) => {
     const answeredCount = Object.keys(answers).length;
 
     if (answeredCount < 2) {
-      alert("sınavı gönderebilmek için en az 2 soruyu yanıtlamanız gerekmektedir.");
+      setShowAlert(true);
       return;
     }
 
-    const confirmed = window.confirm("Sınav göndermek istediğinizden emin misiniz?");
-    if (confirmed) {
-      const endTime = Date.now();
-      const timeTaken = Math.floor((endTime - startTime) / 1000); 
-      console.log("Submitted answers:", answers);
-      setShowNotification(true);
-      setTimeout(() => {
-        setShowNotification(false);
-        navigate("/quiz-result", {
-          state: { answers, category, difficulty, username, timeTaken }
-        });
-      }, 3000); 
-    }
+    setShowConfirm(true);
+  };
+
+  const handleConfirm = () => {
+    setShowConfirm(false);
+    const endTime = Date.now();
+    const timeTaken = Math.floor((endTime - startTime) / 1000);
+    console.log("Submitted answers:", answers);
+    navigate("/quiz-result", {
+      state: { answers, category, difficulty, username, timeTaken },
+    });
+  };
+
+  const handleCancel = () => {
+    setShowConfirm(false);
   };
 
   useEffect(() => {
@@ -53,7 +58,7 @@ const QuizPage = ({ questions, username }) => {
       setTimeLeft((prevTimeLeft) => {
         if (prevTimeLeft <= 1) {
           clearInterval(timer);
-          handleSubmitQuiz(new Event('submit')); 
+          handleSubmitQuiz(new Event("submit"));
           return 0;
         }
         return prevTimeLeft - 1;
@@ -70,21 +75,40 @@ const QuizPage = ({ questions, username }) => {
       .trim()
       .split("\n####")
       .filter((q) => q)
-      .map((q) => q.trim().split("\n").filter(line => !line.startsWith("answer:")));
+      .map((q) =>
+        q
+          .trim()
+          .split("\n")
+          .filter((line) => !line.startsWith("answer:"))
+      );
   } else {
     return <div>Bu kategori ve zorluk derecesine uygun soru yok.</div>;
   }
 
   return (
     <div className="centered-content">
-      {showNotification && (
-        <div className="notification"> <h4 id="successfully">Başarıyla gönderildi</h4> Sınav tamamladınız. İşte sonuçlarınız:</div>
+      {showAlert && (
+        <CustomAlert
+          message="Sınavı gönderebilmek için en az 2 soruyu yanıtlamanız gerekmektedir."
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+      {showConfirm && (
+        <CustomConfirm
+          message="Sınav göndermek istediğinizden emin misiniz?"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
       )}
       <div className="timer">Kalan süre: {formatTime(timeLeft)}</div>
       <form onSubmit={handleSubmitQuiz}>
         {questionList.map((question, questionIndex) => {
-          const imageLines = question.slice(1).filter((line) => line.startsWith('!['));
-          const optionLines = question.slice(1).filter((line) => !line.startsWith('!['));
+          const imageLines = question
+            .slice(1)
+            .filter((line) => line.startsWith("!["));
+          const optionLines = question
+            .slice(1)
+            .filter((line) => !line.startsWith("!["));
 
           return (
             <div key={questionIndex} className="question-block">
@@ -102,7 +126,9 @@ const QuizPage = ({ questions, username }) => {
                     name={`question${questionIndex}`}
                     value={optionIndex}
                     checked={answers[questionIndex] === optionIndex}
-                    onChange={() => handleOptionChange(questionIndex, optionIndex)}
+                    onChange={() =>
+                      handleOptionChange(questionIndex, optionIndex)
+                    }
                   />
                   <label htmlFor={`q${questionIndex}_o${optionIndex}`}>
                     {option.replace(/^\d\.\s*\[\s*\]/, "")}
@@ -113,7 +139,7 @@ const QuizPage = ({ questions, username }) => {
           );
         })}
         <button type="submit" className="submit-button">
-        Sınav gönderin
+          Sınav gönderin
         </button>
       </form>
     </div>

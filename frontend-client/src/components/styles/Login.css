@@ -1,9 +1,8 @@
-/* Login.css */
 .container {
   width: 35%;
-  height: 350px;
+  height: 400px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 20px 30px;
   background: #f9f9f9;
   border: 1px solid #6610f2;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
@@ -12,7 +11,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 25px;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-field {
@@ -23,28 +23,34 @@
   margin: 10px auto;
   border-radius: 5px;
   outline: none;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-field::placeholder {
   font-family: "Poppins", sans-serif;
 }
 
-.start-button {
+.input-field:focus {
+  border-color: #6610f2;
   font-family: "Poppins", sans-serif;
+}
+
+.start-button {
   background-color: #6610f2;
   color: white;
   border: none;
   font-size: 18px;
-  border-radius: 50px 5px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   padding: 15px 40px;
-  display: block;
-  margin: 30px auto;
+  margin-top: 40px ;
+  font-family: "Poppins", sans-serif;
 }
 
 .start-button:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 .markdown-content {
@@ -57,6 +63,6 @@
   margin-top: 1rem;
 }
 
-h1{
+h2 {
   color: #6610f2;
 }

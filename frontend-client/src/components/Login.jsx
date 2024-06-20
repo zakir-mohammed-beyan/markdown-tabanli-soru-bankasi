@@ -35,8 +35,8 @@ const Login = ({ onLogin }) => {
   };
 
   const markdownContent = `
-  # Giriş yapın
-  **Sınavı başlatmak için lütfen kullanıcı adınızı girin.**
+  ## Markdown Tabanlı Çoktan Seçmeli Test Uygulamasına Hoş Geldiniz!
+  Sınavı başlatmak için lütfen kullanıcı adınızı girin.
   `;
 
   return (
@@ -56,7 +56,7 @@ const Login = ({ onLogin }) => {
         disabled={isLoading}
         aria-label="Start Quiz"
       >
-        {isLoading ? "Yükleniyor..." : "Sınav başlat"}
+        {isLoading ? "Yükleniyor..." : "Giriş yapın."}
       </button>
       {error && <p className="error-message">{error}</p>}
     </div>
